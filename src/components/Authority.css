@@ -1,0 +1,72 @@
+.authority-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding: 4rem;
+}
+
+.authority-text {
+  flex: 1;
+}
+
+.authority-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.highlight-text {
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  margin-bottom: 2rem;
+}
+
+.authority-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.authority-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+}
+
+.authority-list li svg {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.authority-badge {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.badge-circle {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 2px dashed var(--color-border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  font-weight: 600;
+  color: var(--color-text-main);
+  background: rgba(0, 201, 177, 0.05);
+}
+
+@media (max-width: 900px) {
+  .authority-content {
+    flex-direction: column;
+    padding: 2.5rem;
+    gap: 3rem;
+  }
+}
