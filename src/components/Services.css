@@ -2,39 +2,112 @@
   background-color: transparent;
 }
 
+.services-group {
+  margin-bottom: 6rem;
+}
+
+.services-group:last-child {
+  margin-bottom: 0;
+}
+
 .section-title {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 3rem;
 }
 
-.services-grid {
+/* Grids */
+.ecommerce-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+@media (min-width: 900px) {
+  .ecommerce-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.platforms-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
-.service-card {
-  text-align: left;
+@media (min-width: 1024px) {
+  .platforms-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Premium Card Layout */
+.premium-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  justify-content: space-between;
+  text-align: left;
+  padding: 2.5rem 2rem;
 }
 
-.service-icon {
-  color: var(--color-primary);
-  margin-bottom: 1.5rem;
-  background: rgba(0, 201, 177, 0.1);
-  padding: 1rem;
-  border-radius: 12px;
+.premium-card-content {
+  margin-bottom: 2rem;
 }
 
-.service-card h3 {
-  font-size: 1.5rem;
+.premium-card h3 {
+  font-size: 1.6rem;
   margin-bottom: 1rem;
+  color: var(--color-text-main);
 }
 
-.service-card p {
+.card-description {
   color: var(--color-text-muted);
   font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Checklist */
+.check-list {
+  margin-bottom: 1.5rem;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.8rem;
+  color: var(--color-text-main);
+  font-size: 0.95rem;
+}
+
+.check-list li::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Footer (Metadata) */
+.premium-card-footer {
+  border-top: 1px solid var(--color-border);
+  padding-top: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted-light);
+  line-height: 1.5;
+}
+
+.premium-card-footer p {
+  margin-bottom: 0.5rem;
+}
+
+.premium-card-footer p:last-child {
+  margin-bottom: 0;
+}
+
+.premium-card-footer b {
+  color: var(--color-text-main);
+  font-weight: 600;
 }

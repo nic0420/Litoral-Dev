@@ -1,5 +1,5 @@
 .portfolio {
-  background-color: rgba(0, 36, 71, 0.5); /* Ligeramente más oscuro para contrastar */
+  background-color: transparent;
 }
 
 .portfolio-subtitle {
@@ -10,22 +10,30 @@
   font-size: 1.1rem;
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-}
-
-.portfolio-item {
-  padding: 0;
-  overflow: hidden;
+.portfolio-list {
   display: flex;
   flex-direction: column;
+  gap: 3rem;
 }
 
-.portfolio-image-placeholder {
+.portfolio-featured-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  overflow: hidden;
+  background: var(--color-glass);
+}
+
+@media (min-width: 900px) {
+  .portfolio-featured-item {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.portfolio-image-container {
   width: 100%;
-  aspect-ratio: 16 / 12;
+  aspect-ratio: 16 / 9;
   background-color: rgba(255, 255, 255, 0.05);
   display: flex;
   align-items: center;
@@ -35,7 +43,15 @@
   padding: 2rem;
 }
 
-.portfolio-image-placeholder span {
+@media (min-width: 900px) {
+  .portfolio-image-container {
+    width: 50%;
+    border-bottom: none;
+    border-right: 1px solid var(--color-border);
+  }
+}
+
+.portfolio-image-container span {
   color: var(--color-text-muted);
   font-size: 0.9rem;
   font-family: monospace;
@@ -44,17 +60,51 @@
   border-radius: 8px;
 }
 
-.portfolio-info {
-  padding: 2rem;
+.portfolio-content {
+  padding: 2.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
-.portfolio-info h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
-  color: var(--color-primary);
+@media (min-width: 900px) {
+  .portfolio-content {
+    width: 50%;
+    padding: 3rem;
+  }
 }
 
-.portfolio-info p {
+.portfolio-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--color-text-main);
+}
+
+.portfolio-content p {
   color: var(--color-text-muted);
-  font-size: 0.95rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Ghost Button */
+.btn-ghost {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+  background-color: rgba(0, 201, 177, 0.1);
+  box-shadow: 0 0 10px rgba(0, 201, 177, 0.2);
+  transform: translateY(-2px);
 }

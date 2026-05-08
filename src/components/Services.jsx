@@ -2,43 +2,124 @@ import React from 'react';
 import './Services.css';
 
 const Services = () => {
-  const servicesData = [
+  const ecommerceData = [
     {
-      title: "Catálogos y Tiendas",
-      description: "Para que tus clientes compren fácil y rápido, directo a tu WhatsApp.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-      )
+      title: "E-commerce con Tienda Nube",
+      description: "Lleva tu negocio al siguiente nivel con una plataforma robusta y lista para vender.",
+      features: [
+        "Catálogo ilimitado de productos",
+        "Integración con pasarelas de pago",
+        "Configuración de envíos automáticos",
+        "Diseño adaptado a la identidad de tu marca"
+      ],
+      diferencial: "Asesoramiento estructural y de negocio.",
+      modelo: "Implementación rápida sobre plataforma."
     },
     {
-      title: "Gestión de Sorteos",
-      description: "Plataformas con panel de control intuitivo para vender números y administrar participantes sin estrés.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
-      )
+      title: "Catálogo Autogestionable a Medida",
+      description: "Una experiencia de compra ultrarrápida, sin intermediarios y con pedidos directos a tu WhatsApp.",
+      features: [
+        "Carga instantánea de productos",
+        "Pedidos enviados directo a WhatsApp",
+        "Panel de control 100% personalizado",
+        "Sin comisiones por venta ni costos ocultos"
+      ],
+      diferencial: "Sin comisiones por venta ni abonos mensuales de servidor.",
+      modelo: "Desarrollo propio escalable en 5 a 7 días."
+    }
+  ];
+
+  const platformsData = [
+    {
+      title: "Plataforma de Sorteos",
+      description: "Automatiza y potencia tus sorteos con un sistema profesional de venta de números.",
+      features: [
+        "Panel de control administrativo para venta",
+        "Gestión de participantes y pagos",
+        "Bloqueo automático de números",
+        "Notificaciones integradas"
+      ],
+      diferencial: "Código garantizado por un Analista Programador en Sistemas, sin plantillas pesadas.",
+      modelo: "Sistema especializado de alto rendimiento."
     },
     {
-      title: "Landing Pages",
-      description: "Tu carta de presentación digital para destacar servicios o captar potenciales clientes.",
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-      )
+      title: "Plataforma Inmobiliaria",
+      description: "Muestra tus propiedades con una interfaz elegante y un sistema de contacto ágil.",
+      features: [
+        "Galería inmersiva de propiedades",
+        "Filtros avanzados de búsqueda",
+        "Fichas detalladas con mapa",
+        "Contacto directo y rápido"
+      ],
+      diferencial: "Código garantizado por un Analista Programador en Sistemas, sin plantillas pesadas.",
+      modelo: "Desarrollo propio escalable."
+    },
+    {
+      title: "Landing Pages Profesionales",
+      description: "Convierte visitantes en clientes con páginas de alto impacto visual y carga rápida.",
+      features: [
+        "Diseño persuasivo de alto impacto",
+        "Llamados a la acción estratégicos",
+        "Optimización SEO básica",
+        "Formularios de contacto integrados"
+      ],
+      diferencial: "Código garantizado por un Analista Programador en Sistemas, sin plantillas pesadas.",
+      modelo: "Sitio web de una página optimizado."
     }
   ];
 
   return (
     <section className="section services" id="servicios">
       <div className="container">
-        <h2 className="section-title">Qué problemas solucionamos</h2>
-        <div className="services-grid">
-          {servicesData.map((service, index) => (
-            <div className="glass-card service-card" key={index}>
-              <div className="service-icon">{service.icon}</div>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-            </div>
-          ))}
+        
+        {/* Planes y Soluciones */}
+        <div className="services-group">
+          <h2 className="section-title">Planes y Soluciones</h2>
+          <div className="ecommerce-grid">
+            {ecommerceData.map((service, index) => (
+              <div className="glass-card premium-card" key={`eco-${index}`}>
+                <div className="premium-card-content">
+                  <h3>{service.title}</h3>
+                  <p className="card-description">{service.description}</p>
+                  <ul className="check-list">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="premium-card-footer">
+                  <p><b>Diferencial:</b> {service.diferencial}</p>
+                  <p><b>Modelo:</b> {service.modelo}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+
+        {/* Plataformas Específicas */}
+        <div className="services-group">
+          <h2 className="section-title">Plataformas Específicas</h2>
+          <div className="platforms-grid">
+            {platformsData.map((platform, index) => (
+              <div className="glass-card premium-card" key={`plat-${index}`}>
+                <div className="premium-card-content">
+                  <h3>{platform.title}</h3>
+                  <p className="card-description">{platform.description}</p>
+                  <ul className="check-list">
+                    {platform.features.map((feature, idx) => (
+                      <li key={idx}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="premium-card-footer">
+                  <p><b>Diferencial:</b> {platform.diferencial}</p>
+                  <p><b>Modelo:</b> {platform.modelo}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );
