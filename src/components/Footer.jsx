@@ -6,16 +6,16 @@ const Footer = () => {
     <footer className="section footer">
       <div className="container">
         <div className="footer-cta glass-card">
-          <h2>No te quedes afuera del mundo digital.</h2>
-          <p>Empecemos a armar tu web hoy.</p>
+          <h2>Llevá tu negocio al siguiente nivel operativo.</h2>
+          <p>Solicitá hoy mismo tu Demo Virtual Gratuita y mira cómo funciona.</p>
           <a 
-            href="https://wa.me/5493795769425?text=Hola,%20quiero%20empezar%20a%20armar%20mi%20web." 
+            href="https://wa.me/5493795769425?text=Hola!%20Quiero%20solicitar%20mi%20Demo%20Virtual%20Gratuita%20para%20mi%20negocio." 
             target="_blank" 
             rel="noopener noreferrer" 
             className="btn-primary btn-large"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-            Hablemos por WhatsApp
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+            Solicitar Demo Gratis
           </a>
         </div>
         

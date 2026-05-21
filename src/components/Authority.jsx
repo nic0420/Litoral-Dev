@@ -7,22 +7,22 @@ const Authority = () => {
       <div className="container">
         <div className="authority-content glass-card">
           <div className="authority-text">
-            <h2>Por qué elegir Litoral.dev</h2>
+            <h2>Ingeniería y Garantía Técnica</h2>
             <p className="highlight-text">
               Desarrollos dirigidos por un <strong>Analista Programador en Sistemas</strong>.
             </p>
             <ul className="authority-list">
               <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Garantía de sitios seguros, modernos y sin plantillas pesadas.</span>
+                <span><strong>Sistemas a Medida:</strong> Nada de plantillas pesadas o WordPress lento. Tu sistema es rápido, seguro y 100% tuyo.</span>
               </li>
               <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>No usamos plataformas cerradas, tu web es ágil y tuya.</span>
+                <span><strong>Cero Costo de Alojamiento:</strong> Desplegamos en Vercel, aprovechando su CDN moderna para que no pagues abonos mensuales de servidor.</span>
               </li>
               <li>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                <span>Cero comisiones por venta. Todo lo que ganas es tuyo.</span>
+                <span><strong>Automatización Real:</strong> Eliminamos las planillas manuales de tu día a día conectando tu web con bases de datos en la nube y WhatsApp.</span>
               </li>
             </ul>
           </div>
