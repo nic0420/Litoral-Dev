@@ -1,4 +1,5 @@
 import React from 'react';
+import Portfolio from './components/Portfolio';
 import './index.css';
 
 function App() {
@@ -134,6 +135,9 @@ function App() {
           </div>
         </section>
       </main>
+
+        {/* Portfolio / Casos de Éxito */}
+        <Portfolio />
 
       <footer className="py-12 border-t border-border/50 text-center text-foreground/40 text-sm">
         <p>© {new Date().getFullYear()} Litoral Dev. Todos los derechos reservados.</p>
