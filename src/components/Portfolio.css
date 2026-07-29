@@ -10,76 +10,131 @@
   font-size: 1.1rem;
 }
 
-.portfolio-list {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
+/* ── Carousel ── */
+.carousel {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
-.portfolio-featured-item {
+.carousel-slide {
   display: flex;
   flex-direction: column;
-  padding: 0;
-  overflow: hidden;
-  background: var(--color-glass);
+  gap: 2rem;
+  animation: fadeSlideIn 0.4s ease;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (min-width: 900px) {
-  .portfolio-featured-item {
+  .carousel-slide {
     flex-direction: row;
     align-items: center;
   }
 }
 
-.portfolio-visual {
-  width: 100%;
-  padding: 1.5rem;
-  background: rgba(0, 0, 0, 0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid var(--color-border);
+.carousel-visual {
+  flex: 1;
+  min-width: 0;
 }
 
-@media (min-width: 900px) {
-  .portfolio-visual {
-    width: 55%;
-    border-bottom: none;
-    border-right: 1px solid var(--color-border);
-    min-height: 350px;
-  }
-}
-
-.portfolio-content {
-  padding: 2.5rem;
-  width: 100%;
+.carousel-content {
+  flex: 0 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: flex-start;
 }
 
 @media (min-width: 900px) {
-  .portfolio-content {
-    width: 45%;
-    padding: 3rem;
+  .carousel-content {
+    max-width: 320px;
+    padding-left: 2rem;
   }
 }
 
-.portfolio-content h3 {
+.carousel-number {
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.carousel-content h3 {
   font-size: 1.8rem;
   margin-bottom: 1rem;
   color: var(--color-text-main);
 }
 
-.portfolio-content p {
+.carousel-content p {
   color: var(--color-text-muted);
   font-size: 1.05rem;
-  line-height: 1.6;
+  line-height: 1.7;
   margin-bottom: 2rem;
 }
 
-/* Ghost Button */
+/* ── Controls ── */
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.carousel-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.carousel-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background: rgba(0, 201, 177, 0.08);
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.carousel-dot.active {
+  background: var(--color-primary);
+  box-shadow: 0 0 8px rgba(0, 201, 177, 0.4);
+  width: 28px;
+  border-radius: 5px;
+}
+
+/* ── Ghost Button ── */
 .btn-ghost {
   display: inline-flex;
   align-items: center;
@@ -114,7 +169,7 @@
   transform: translateX(4px);
 }
 
-/* Browser Frame Mockup */
+/* ── Browser Frame Mockup ── */
 .browser-frame {
   width: 100%;
   border-radius: 8px;
@@ -125,7 +180,7 @@
   transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.portfolio-featured-item:hover .browser-frame {
+.carousel-slide:hover .browser-frame {
   box-shadow: 0 12px 48px rgba(0, 201, 177, 0.1);
   transform: translateY(-2px);
 }
@@ -151,17 +206,9 @@
   border-radius: 50%;
 }
 
-.browser-dot.red {
-  background: #ff5f57;
-}
-
-.browser-dot.yellow {
-  background: #ffbd2e;
-}
-
-.browser-dot.green {
-  background: #28c840;
-}
+.browser-dot.red { background: #ff5f57; }
+.browser-dot.yellow { background: #ffbd2e; }
+.browser-dot.green { background: #28c840; }
 
 .browser-url {
   flex: 1;
@@ -229,9 +276,7 @@
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
 .browser-error {

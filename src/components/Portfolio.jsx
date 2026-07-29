@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import './Portfolio.css';
 
 const BrowserFrame = ({ url, label }) => {
@@ -67,27 +67,59 @@ const Portfolio = () => {
     }
   ];
 
+  const [current, setCurrent] = useState(0);
+
+  const prev = useCallback(() => {
+    setCurrent(c => (c === 0 ? projects.length - 1 : c - 1));
+  }, [projects.length]);
+
+  const next = useCallback(() => {
+    setCurrent(c => (c === projects.length - 1 ? 0 : c + 1));
+  }, [projects.length]);
+
+  const project = projects[current];
+
   return (
     <section className="section portfolio" id="portfolio">
       <div className="container">
         <h2 className="section-title">Casos de Éxito</h2>
         <p className="portfolio-subtitle">Soluciones reales funcionando ahora mismo.</p>
-        
-        <div className="portfolio-list">
-          {projects.map((project, index) => (
-            <div className="portfolio-featured-item glass-card" key={index}>
-              <div className="portfolio-visual">
-                <BrowserFrame url={project.url} label={project.label} />
-              </div>
-              <div className="portfolio-content">
-                <h3>{project.title}</h3>
-                <p>{project.description}</p>
-                <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn-ghost">
-                  Ver proyecto <span className="btn-arrow">→</span>
-                </a>
-              </div>
+
+        <div className="carousel">
+          <div className="carousel-slide" key={current}>
+            <div className="carousel-visual">
+              <BrowserFrame url={project.url} label={project.label} />
             </div>
-          ))}
+            <div className="carousel-content">
+              <span className="carousel-number">{String(current + 1).padStart(2, '0')}</span>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <a href={project.url} target="_blank" rel="noopener noreferrer" className="btn-ghost">
+                Ver proyecto <span className="btn-arrow">→</span>
+              </a>
+            </div>
+          </div>
+
+          <div className="carousel-controls">
+            <button className="carousel-btn" onClick={prev} aria-label="Anterior">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+
+            <div className="carousel-dots">
+              {projects.map((_, i) => (
+                <button
+                  key={i}
+                  className={`carousel-dot ${i === current ? 'active' : ''}`}
+                  onClick={() => setCurrent(i)}
+                  aria-label={`Ir al proyecto ${i + 1}`}
+                />
+              ))}
+            </div>
+
+            <button className="carousel-btn" onClick={next} aria-label="Siguiente">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
         </div>
       </div>
     </section>
